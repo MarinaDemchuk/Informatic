@@ -1,1 +1,77 @@
 # Informatic
+
+ubuntu@ubuntu:~$ ls
+Desktop Downloads Pictures Templates
+Documents Music Public Videos
+ubuntu@ubuntu:~$ cd Desktop
+ubuntu@ubuntu:~/Desktop$ mkdir papka2
+ubuntu@ubuntu:~/Desktop$ ls
+papka2 ubiquity.desktop
+ubuntu@ubuntu:~/Desktop$ cd papka2
+ubuntu@ubuntu:~/Desktop/papka2$ ls
+ubuntu@ubuntu:~/Desktop/papka2$ touch file1 file2
+ubuntu@ubuntu:~/Desktop/papka2$ ls
+file1 file2
+ubuntu@ubuntu:~/Desktop/papka2$ mkdir Informatic
+ubuntu@ubuntu:~/Desktop/papka2$ ls
+file1 file2 Informatic
+ubuntu@ubuntu:~/Desktop/papka2$ mkdir Informatic2
+ubuntu@ubuntu:~/Desktop/papka2$ ls
+file1 file2 Informatic Informatic2
+ubuntu@ubuntu:~/Desktop/papka2$ pwd
+/home/ubuntu/Desktop/papka2
+ubuntu@ubuntu:~/Desktop/papka2$ cat file1
+First things first
+I'ma say all the words inside my head
+I'm fired up and tired of the way that things have been, oh-ooh
+The way that things have been, oh-ooh
+Second thing second
+Don't you tell me what you think that I could be
+I'm the one at the sail, I'm the master of my sea, oh-ooh
+The master of my sea, oh-ooh
+I was broken from a young age
+Taking my sulking to the masses
+Writing my poems for the few
+ubuntu@ubuntu:~/Desktop/papka2$ ls
+file1 file2 Informatic Informatic2
+ubuntu@ubuntu:~/Desktop/papka2$ less file1
+ubuntu@ubuntu:~/Desktop/papka2$ cp file1 file2
+ubuntu@ubuntu:~/Desktop/papka2$ cat file2
+First things first
+I'ma say all the words inside my head
+I'm fired up and tired of the way that things have been, oh-ooh
+The way that things have been, oh-ooh
+Second thing second
+Don't you tell me what you think that I could be
+I'm the one at the sail, I'm the master of my sea, oh-ooh
+The master of my sea, oh-ooh
+I was broken from a young age
+Taking my sulking to the masses
+Writing my poems for the few
+ubuntu@ubuntu:~/Desktop/papka2$ mv file1 file2
+ubuntu@ubuntu:~/Desktop/papka2$ ls
+file2 Informatic Informatic2
+ubuntu@ubuntu:~/Desktop/papka2$ mv -t Informatic Informatic2
+ubuntu@ubuntu:~/Desktop/papka2$ ls
+file2 Informatic
+ubuntu@ubuntu:~/Desktop/papka2$ tail -10 file2
+I'ma say all the words inside my head
+I'm fired up and tired of the way that things have been, oh-ooh
+The way that things have been, oh-ooh
+Second thing second
+Don't you tell me what you think that I could be
+I'm the one at the sail, I'm the master of my sea, oh-ooh
+The master of my sea, oh-ooh
+I was broken from a young age
+Taking my sulking to the masses
+Writing my poems for the few
+ubuntu@ubuntu:~/Desktop/papka2$ cd Desktop
+bash: cd: Desktop: No such file or directory
+ubuntu@ubuntu:~/Desktop/papka2$ cd
+ubuntu@ubuntu:~$ cd Desktop
+ubuntu@ubuntu:~/Desktop$ ls
+papka2 ubiquity.desktop
+ubuntu@ubuntu:~/Desktop$ rm -r papka2
+ubuntu@ubuntu:~/Desktop$ ls
+ubiquity.desktop
+ubuntu@ubuntu:~/Desktop$
