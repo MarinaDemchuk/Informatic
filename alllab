@@ -1,0 +1,125 @@
+№1
+
+Novice:
+1)cat file.txt
+rm file.txt
+mkdir lab1
+rm -r lab1
+2)pwd
+3)cd
+cd informatics/lab1
+
+Advanced:
+1)find . -name "*.txt"
+2)grep 'Friday' crusoe.txt
+3)cat » file.txt [enter] Hello world! [enter, Ctrl + D]
+4)ls » file.txt
+5)find . -name "*.txt" (после команды cd)
+
+Expert
+1)awk '/Friday/ {sum+=1} END {print sum}' crusoe.txt
+2)sed -i 's/Friday/Saturtay/g' crusoe.txt
+3.1)awk '{sum_left+=$1} {sum_right+=$2} END {print sum_left,sum_right}' sum.txt
+3.2)awk '{[enter]
+for (i = 0; i < NR; i++){
+if (NF > max){
+max = NF;
+str = $0;
+}}} END {print str}' file.txt
+
+№2
+
+Novice:
+1)touch .test.txt
+2)cd
+ls -a
+3)find . -name "*.txt"
+
+Advanced:
+1)which cat whereis cat
+which less whereis less
+which grep whereis grep
+which find whereis find
+2)echo $PATH
+3)gcc lab3-0.c -o lab3-0 [enter]
+./lab3-0
+4)export PATH=$PATH:~/informatics/lab2
+
+Expert:
+чтобы писать строку только с shared.txt
+ls -la | egrep "shared.txt$"
+1)cd
+touch shared.txt
+ls -la
+[-w- = read and write
+r— = read
+—x = выполнение
+u = владелец
+g = группа
+o = остальные пользователи]
+2)chmod u=r,g-w,g-r,o-r shared.txt
+3)[before: chmod a=rw shared.txt]
+sudo chown root shared.txt
+4)[всё тоже, только пишем имя директории]
+
+№3
+
+Novice:
+1) Пинг - это промежуток времени, за который пакет, отосланный с вашего
+компьютера,проходит через сеть другого компьютера или сервера, и возвращается
+обратно.
+TTL - время жизни пакета данных в протоколе IP (предельно допустимое время
+его пребывания в системе), время актуальности записей DNS
+ping - утилита проверяет, может ли хост отвечать на сетевые запросы
+с помощью протокола ICMP. Итак, когда вы отправляете запрос ping удаленному
+узлу, утилита устанавливает для каждого пакета уникальный идентификатор,
+а также TTL и время отправки пакета. Если хост доступен, он отправляет ответ,
+на основе времени отправки утилита может вычислить время прохождения пакета
+туда и обратно. Затем отправляется следующий пакет. В конце рассчитывается
+общее количество отправленных и принятых пакетов, процент потерь и другие данные.
+ping -c 3 yandex.ru - проверка работоспособности сети на стабильном сайте (проверка 3 пакетами)
+ping -c 3 [IP] - то же, что и в 1 но по айпи
+ping -f [сайт] - нагрузочное тестирование
+
+traceroute - Команда traceroute linux использует UDP пакеты. Она отправляет
+пакет с TTL=1 и смотрит адрес ответившего узла, дальше TTL=2, TTL=3 и так пока
+не достигнет цели. Каждый раз отправляется по три пакета и для каждого из них
+измеряется время прохождения. Пакет отправляется на случайный порт, который,
+скорее всего, не занят. Когда утилита traceroute получает сообщение от целевого
+узла о том, что порт недоступен трассировка считается завершенной.
+2) ping -c 3 yandex.ru
+
+Adnanced:
+1)touch write.sh
+mcedit [записать в файл следующее:
+#!/bin/bash
+for ((i = 0; i < $1; i++)); do
+echo "Hello"
+done
+]
+chmod +x write.sh //делаем файл исполняемым
+./write.sh 3
+2)touch add.sh
+mcedit [записать в файл следующее:
+#!/bin/bash
+sum=$(($1 + $2))
+echo $sum]
+chmod +x add.sh
+./add.sh 2 3
+3)touch op.sh
+#!/bin/sh
+if [ "$3" == "add" ] || [ "$3" == "sub" ] || [ "$3" == "mul" ]
+then
+case "$3" in
+add) echo $[$1+$2] ;;
+sub) echo $[$1-$2] ;;
+mul) echo $[$1*$2] ;;
+esac
+else
+case "$ARITHMETIC_OP" in
+add) echo $[$1+$2] ;;
+sub) echo $[$1-$2] ;;
+mul) echo $[$1*$2] ;;
+*) echo "$ARITHMETIC_OP is not an option" ;;
+esac
+fi
